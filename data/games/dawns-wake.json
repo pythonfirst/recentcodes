@@ -1,0 +1,80 @@
+{
+  "game": "Dawn's Wake",
+  "slug": "dawns-wake",
+  "publisher": "Neptune Corp.",
+  "launchNote": "It is out on mobile; the Steam (PC) version has not been released yet.",
+  "lastChecked": "2026-11-13T14:40:00Z",
+  "datePublished": "2026-11-13",
+  "description": "Official Dawn's Wake redeem codes. We check the official Steam announcements and official website, and list only codes confirmed on official channels, each linked to the official post.",
+  "activeCodes": [],
+  "expiredCodes": [],
+  "sources": [
+    {
+      "name": "Official Steam announcements (app 4635160)",
+      "url": "https://store.steampowered.com/news/app/4635160"
+    },
+    {
+      "name": "Official website",
+      "url": "https://sword.neptunegamez.com/en"
+    },
+    {
+      "name": "Official Discord",
+      "url": "https://discord.gg/2WmJhJCkRk"
+    },
+    {
+      "name": "Google Play listing (Neptune Corp.)",
+      "url": "https://play.google.com/store/apps/details?id=com.neptune.dawnsedge"
+    }
+  ],
+  "officialChannels": [
+    {
+      "name": "Steam",
+      "url": "https://store.steampowered.com/app/4635160/"
+    },
+    {
+      "name": "Official website",
+      "url": "https://sword.neptunegamez.com/en"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/2WmJhJCkRk"
+    },
+    {
+      "name": "Google Play",
+      "url": "https://play.google.com/store/apps/details?id=com.neptune.dawnsedge"
+    }
+  ],
+  "redeemNote": "The exact in-game redeem path has not been confirmed from official sources. When an official post explains it, we will update this section.",
+  "redeemSteps": [
+    {
+      "name": "Watch official channels",
+      "text": "Official Dawn's Wake codes are announced on the game's official channels linked on this page."
+    },
+    {
+      "name": "Check this page after a drop",
+      "text": "We list a code only after it appears in an official post, and we link that post next to the code."
+    },
+    {
+      "name": "Redeem using official instructions",
+      "text": "Use the redeem steps published with the official code. We do not invent in-game menu paths."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Are there official Dawn's Wake redeem codes right now?",
+      "a": "Check the Active codes table on this page. It lists only codes confirmed on official channels, each with a link to the official post. When none are confirmed, the page says Pending official verification."
+    },
+    {
+      "q": "Where do you look for official codes?",
+      "a": "The official Dawn's Wake Steam announcements and the official website, checked automatically every hour and more often in the evening (Beijing time). A code is listed only when it appears in an official post."
+    },
+    {
+      "q": "Why don't you list codes posted on unofficial sites?",
+      "a": "We list only verifiable official redeem codes. Codes circulating on unofficial sites are unverified and not listed."
+    },
+    {
+      "q": "How do I redeem a code?",
+      "a": "The exact in-game steps have not been confirmed from official sources. When an official post explains the redeem path, we will add it to the How to redeem section."
+    }
+  ]
+}

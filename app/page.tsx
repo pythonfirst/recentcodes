@@ -5,7 +5,11 @@ import LastUpdated from "@/components/LastUpdated";
 import QuickAnswer from "@/components/QuickAnswer";
 import { JsonLd } from "@/components/JsonLd";
 import { pageMeta, webPageLd } from "@/lib/seo";
-import { formatDate, getAllGames } from "@/lib/games";
+import { formatDate } from "@/lib/games";
+import { getLiveGames } from "@/lib/live";
+import { PENDING_LABEL } from "@/components/CodeTable";
+
+export const revalidate = 300;
 
 const UPDATED = "2026-11-13";
 const TITLE = `Official Game Redeem Codes | ${SITE_NAME}`;
@@ -19,8 +23,8 @@ export const metadata: Metadata = pageMeta({
   image: "/opengraph-image",
 });
 
-export default function Home() {
-  const games = getAllGames();
+export default async function Home() {
+  const games = await getLiveGames();
   return (
     <div className="prose">
       <JsonLd data={webPageLd({ path: "/", name: TITLE, description: DESCRIPTION, modified: UPDATED })} />
@@ -45,14 +49,15 @@ export default function Home() {
             const active = g.activeCodes.length;
             const status =
               active === 0
-                ? "No official codes yet"
+                ? PENDING_LABEL
                 : `${active} official code${active === 1 ? "" : "s"}`;
             return (
               <li key={g.slug}>
                 <Link href={`/codes/${g.slug}`} className="game-card">
                   <h2>{g.game}</h2>
                   <p>
-                    {g.publisher} · Launched {formatDate(g.launchDate)}
+                    {g.publisher}
+                    {g.launchDate ? ` · Launched ${formatDate(g.launchDate)}` : ""}
                   </p>
                   <p className="game-meta">
                     <span className="status-pill">{status}</span>

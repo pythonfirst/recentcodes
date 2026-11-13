@@ -5,24 +5,60 @@
   "launchDate": "2026-11-12",
   "lastChecked": "2026-11-13T08:00:00Z",
   "datePublished": "2026-11-13",
-  "description": "Official Transformers: Eternal War redeem codes. We list only verifiable official codes; there are no official codes yet.",
+  "description": "Official Transformers: Eternal War redeem codes. We list only codes confirmed on official channels, each linked to the official post.",
   "activeCodes": [],
   "expiredCodes": [],
   "sources": [
-    { "name": "Official website", "url": "https://transformerseternalwar.com" },
-    { "name": "Official X account", "url": "https://x.com/TFEternalWar" },
-    { "name": "Official Discord", "url": "https://discord.gg/aQSsSfURn" },
-    { "name": "Official Facebook page", "url": "https://www.facebook.com/profile.php?id=61566948995743" },
-    { "name": "Official Instagram", "url": "https://www.instagram.com/transformerseternalwar" },
-    { "name": "Official TikTok", "url": "https://www.tiktok.com/@transformerseternalwar" }
+    {
+      "name": "Official website",
+      "url": "https://transformerseternalwar.com"
+    },
+    {
+      "name": "Official X account",
+      "url": "https://x.com/TFEternalWar"
+    },
+    {
+      "name": "Official Discord",
+      "url": "https://discord.gg/aQSsSfURn"
+    },
+    {
+      "name": "Official Facebook page",
+      "url": "https://www.facebook.com/profile.php?id=61566948995743"
+    },
+    {
+      "name": "Official Instagram",
+      "url": "https://www.instagram.com/transformerseternalwar"
+    },
+    {
+      "name": "Official TikTok",
+      "url": "https://www.tiktok.com/@transformerseternalwar"
+    }
   ],
   "officialChannels": [
-    { "name": "Official website", "url": "https://transformerseternalwar.com" },
-    { "name": "X (Twitter)", "url": "https://x.com/TFEternalWar" },
-    { "name": "Discord", "url": "https://discord.gg/aQSsSfURn" },
-    { "name": "Facebook", "url": "https://www.facebook.com/profile.php?id=61566948995743" },
-    { "name": "Instagram", "url": "https://www.instagram.com/transformerseternalwar" },
-    { "name": "TikTok", "url": "https://www.tiktok.com/@transformerseternalwar" }
+    {
+      "name": "Official website",
+      "url": "https://transformerseternalwar.com"
+    },
+    {
+      "name": "X (Twitter)",
+      "url": "https://x.com/TFEternalWar"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/aQSsSfURn"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=61566948995743"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/transformerseternalwar"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@transformerseternalwar"
+    }
   ],
   "redeemNote": "The exact in-game redeem path has not been confirmed from official sources. When official codes appear, we will verify the steps and update this section. Do not rely on menu paths described on unofficial sites.",
   "redeemSteps": [
@@ -42,7 +78,7 @@
   "faq": [
     {
       "q": "Are there official Transformers: Eternal War redeem codes right now?",
-      "a": "No. As of our last check, Wanda Cinemas Games / Hoolai have not published any official redeem codes for Transformers: Eternal War, which launched on 12 November 2026."
+      "a": "Check the Active codes table on this page. It lists only codes confirmed on official channels, each with a link to the official post. When none are confirmed, the page says Pending official verification."
     },
     {
       "q": "Where will official codes be published?",

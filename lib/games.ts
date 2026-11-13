@@ -7,6 +7,7 @@ export type RedeemCode = {
   added?: string;
   expires?: string | null;
   source?: string;
+  sourceName?: string;
 };
 
 export type NamedLink = {
@@ -29,9 +30,13 @@ export type GameData = {
   game: string;
   slug: string;
   publisher: string;
-  launchDate: string;
-  lastChecked: string;
+  /** Only when confirmed from an official source. */
+  launchDate?: string;
+  /** Shown instead of a launch date when no official date is confirmed. */
+  launchNote?: string;
+  /** Used for ordering when launchDate is unknown. */
   datePublished?: string;
+  lastChecked: string;
   description?: string;
   activeCodes: RedeemCode[];
   expiredCodes: RedeemCode[];
@@ -48,7 +53,8 @@ export function getAllGames(): GameData[] {
   if (!fs.existsSync(DIR)) return [];
   const files = fs.readdirSync(DIR).filter((f) => f.endsWith(".json"));
   const games = files.map((f) => JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8")) as GameData);
-  return games.sort((a, b) => (a.launchDate < b.launchDate ? 1 : a.launchDate > b.launchDate ? -1 : 0));
+  const key = (g: GameData) => g.launchDate || g.datePublished || "";
+  return games.sort((a, b) => (key(a) < key(b) ? 1 : key(a) > key(b) ? -1 : a.game.localeCompare(b.game)));
 }
 
 export function getGame(slug: string): GameData | undefined {

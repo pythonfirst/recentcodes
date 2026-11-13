@@ -1,0 +1,71 @@
+{
+  "game": "KOF: Legend",
+  "slug": "kof-legend",
+  "publisher": "JOYMAKER GAMES PTE. LTD. (SNK licensed)",
+  "lastChecked": "2026-11-13T14:40:00Z",
+  "datePublished": "2026-11-13",
+  "description": "Official KOF: Legend redeem codes, taken from the official Discord #gift-code-drops channel. We list only codes confirmed on official channels, each linked to the official post.",
+  "activeCodes": [],
+  "expiredCodes": [],
+  "sources": [
+    {
+      "name": "Official Discord, #gift-code-drops channel",
+      "url": "https://discord.gg/pCXP8VZvN6"
+    },
+    {
+      "name": "Official website",
+      "url": "https://koflegend.joymaker.com/"
+    },
+    {
+      "name": "Google Play listing (JOYMAKER GAMES PTE. LTD.)",
+      "url": "https://play.google.com/store/apps/details?id=com.huanle.kof.sea"
+    }
+  ],
+  "officialChannels": [
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/pCXP8VZvN6"
+    },
+    {
+      "name": "Official website",
+      "url": "https://koflegend.joymaker.com/"
+    },
+    {
+      "name": "Google Play",
+      "url": "https://play.google.com/store/apps/details?id=com.huanle.kof.sea"
+    }
+  ],
+  "redeemNote": "The exact in-game redeem path has not been confirmed from official sources. When an official post explains it, we will update this section.",
+  "redeemSteps": [
+    {
+      "name": "Watch official channels",
+      "text": "Official KOF: Legend codes are announced on the game's official channels linked on this page."
+    },
+    {
+      "name": "Check this page after a drop",
+      "text": "We list a code only after it appears in an official post, and we link that post next to the code."
+    },
+    {
+      "name": "Redeem using official instructions",
+      "text": "Use the redeem steps published with the official code. We do not invent in-game menu paths."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Are there official KOF: Legend redeem codes right now?",
+      "a": "Check the Active codes table on this page. It lists only codes confirmed on official channels, each with a link to the official post. When none are confirmed, the page says Pending official verification."
+    },
+    {
+      "q": "Where do you look for official codes?",
+      "a": "The official KOF: Legend Discord #gift-code-drops channel, which we follow automatically and check every few minutes. A code is listed only when it appears in an official post there."
+    },
+    {
+      "q": "Why don't you list codes posted on unofficial sites?",
+      "a": "We list only verifiable official redeem codes. Codes circulating on unofficial sites are unverified and not listed."
+    },
+    {
+      "q": "How do I redeem a code?",
+      "a": "The exact in-game steps have not been confirmed from official sources. When an official post explains the redeem path, we will add it to the How to redeem section."
+    }
+  ]
+}

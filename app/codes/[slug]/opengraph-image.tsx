@@ -9,10 +9,6 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
   const { slug } = await params;
   const game = getGame(slug);
   const title = game ? `${game.game} redeem codes` : "Redeem codes";
-  const subtitle = game
-    ? game.activeCodes.length === 0
-      ? "No official codes yet · Unofficial fan resource"
-      : "Verifiable official codes only"
-    : "Verifiable official codes only";
+  const subtitle = "Verifiable official codes only · Unofficial fan resource";
   return renderOg(title, subtitle);
 }

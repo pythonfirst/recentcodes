@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import CodeTable from "@/components/CodeTable";
+import CodeTable, { PENDING_LABEL } from "@/components/CodeTable";
 import { FaqList } from "@/components/JsonLd";
 import LastChecked from "@/components/LastChecked";
 import QuickAnswer from "@/components/QuickAnswer";
 import { JsonLd } from "@/components/JsonLd";
 import { articleLd, faqPageLd, howToLd, pageMeta } from "@/lib/seo";
 import { dateOnly, formatDate, getAllGames, getGame } from "@/lib/games";
+import { getLiveGame } from "@/lib/live";
 
 type Params = { slug: string };
+
+// ISR: published codes come from Supabase and appear within 5 minutes (or immediately via on-demand revalidation).
+export const revalidate = 300;
 
 export function generateStaticParams() {
   return getAllGames().map((g) => ({ slug: g.slug }));
@@ -34,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 export default async function GameCodesPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
-  const game = getGame(slug);
+  const game = await getLiveGame(slug);
   if (!game) notFound();
 
   const path = `/codes/${game.slug}`;
@@ -42,16 +46,17 @@ export default async function GameCodesPage({ params }: { params: Promise<Params
   const description =
     game.description ||
     `Official ${game.game} redeem codes. We list only verifiable official codes from ${game.publisher}.`;
-  const published = game.datePublished || game.launchDate;
+  const published = game.datePublished || game.launchDate || dateOnly(game.lastChecked);
   const modified = dateOnly(game.lastChecked);
   const noOfficial = game.activeCodes.length === 0;
+  const launched = game.launchDate ? ` The game launched on ${formatDate(game.launchDate)} and is published by ${game.publisher}.` : ` The game is published by ${game.publisher}.`;
   const quick = noOfficial
-    ? `There are no official ${game.game} redeem codes yet. The game launched on ${formatDate(game.launchDate)} and is published by ${game.publisher}. Codes circulating on unofficial sites are unverified and not listed.`
+    ? `${PENDING_LABEL}: no ${game.game} redeem code has been confirmed on an official channel yet.${launched} Codes circulating on unofficial sites are unverified and not listed.`
     : `${game.game} official redeem codes, verified against official channels. Last checked ${formatDate(game.lastChecked, true)}.`;
   const faq = game.faq || [];
   const steps = game.redeemSteps || [];
-  const emptyActive = `There are no official ${game.game} redeem codes yet. We will list them here when they are published on official channels.`;
-  const emptyExpired = `No expired official codes. Official codes have not been published yet.`;
+  const emptyActive = `No ${game.game} redeem code has been confirmed on an official channel yet. We will list codes here, with a link to the official post, as soon as one is published.`;
+  const emptyExpired = noOfficial ? `No expired official codes. Official codes have not been published yet.` : `No expired official codes.`;
 
   return (
     <div className="prose">
@@ -86,12 +91,13 @@ export default async function GameCodesPage({ params }: { params: Promise<Params
       <QuickAnswer text={quick} />
       <LastChecked iso={game.lastChecked} />
       <p>
-        {game.game} launched on {formatDate(game.launchDate)} and is published by {game.publisher}. This page lists
+        {game.launchDate ? `${game.game} launched on ${formatDate(game.launchDate)} and is published by ${game.publisher}.` : `${game.game} is published by ${game.publisher}.`}{" "}
+        {game.launchNote ? `${game.launchNote} ` : ""}This page lists
         only verifiable official redeem codes. Codes circulating on unofficial sites are unverified and not listed.
       </p>
 
       <h2 id="active-codes">Active codes</h2>
-      <CodeTable codes={game.activeCodes} empty={emptyActive} />
+      <CodeTable codes={game.activeCodes} empty={emptyActive} pending />
 
       <h2 id="expired-codes">Expired codes</h2>
       <CodeTable codes={game.expiredCodes} empty={emptyExpired} />
